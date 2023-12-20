@@ -1,0 +1,87 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 20px 50px;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+
+}
+
+.grid{
+    display: grid;
+    width: 100%;
+    max-width: 800px;
+    /*grid-template-columns: 200px 200px;*/ /* duas colunas de 200px */
+    grid-template-columns: repeat(5, 1fr); /*5 colunas */
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.card{
+    /*definir uma proporção: 1/1 seria um quadrado, 3/4 seria 3/4*/
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.341);
+
+    transition: all 600ms ease;
+    
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(3, 44, 3);
+
+    transition: all 2000ms ease;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.back{
+    background-image: url('../images/back.png');
+    backface-visibility: hidden;
+}
+
+.reveal-card{
+    transform: rotateY(180deg);
+}
+
+.disabled-card{
+    filter: saturate(0);
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
